@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+--softBlue: hsl(215, 51%, 70%);
+--cyan: hsl(178, 100%, 50%);
+
+--mainBg: hsl(217, 54%, 11%); /* Main BG */
+--cardBg: hsl(216, 50%, 16%); /*Card BG*/
+--line: hsl(215, 32%, 27%);
+--white: hsl(0, 0%, 100%);
+--cardMargin: 85%;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: var(--mainBg);
+    color: var(--white);
+}
+
+p, ul {
+    color: var(--softBlue);
+}
+
+ul {
+    list-style: none;
+}
+
+.card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    background-color: var(--cardBg);
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding-block-start: 1.5rem;
+    gap: 1rem;
+    cursor: default;
+}
+
+.overlay {
+    position: absolute;
+    opacity: 0;
+    background-image: url(./images/icon-view.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 10px;
+    width: var(--cardMargin);
+    aspect-ratio: 1;
+    background-color: var(--cyan);
+    cursor: pointer;
+    z-index: 1000;
+    transition: 300ms
+}
+.overlay:hover {
+    opacity: 0.5;
+}
+
+.img {
+    max-width: var(--cardMargin);
+    height: 55%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cardTitle,
+.cardText {
+    width: var(--cardMargin);
+    text-align: left;
+}
+
+.cardTitle:hover,
+.cardTitle:focus,
+.autName:hover,
+.autName:focus { 
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.cardInfo {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: var(--cardMargin);
+    align-items: center;
+
+}
+
+.cardInfo li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cardCredits {
+    display: flex;
+    justify-content: flex-start;
+    width: var(--cardMargin);
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-block-end: 1.5rem;
+}
+
+.cardCredits li {
+    width: 30px;
+    height: 30px;
+}
+
+.author {
+    flex-basis: 100%;
+}
+
+
+.avatar {
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+
+}
+
+.line {
+    width: var(--cardMargin);
+    height: 1px;
+    background-color: var(--line);
+}
+
+.cyan {
+    color: var(--cyan);
+}
+
+.autName {
+    color: var(--white)
+}
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    position: absolute;
+    top: 97vh;
+    left: 50%;
+    transform: translateX(-50%)
+}
+.attribution a { color: hsl(228, 45%, 44%); }
